@@ -2,18 +2,18 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "PT Sans", sans-serif;
+  /* font-family: "PT Sans", sans-serif; */
   background-color: rgb(229, 219, 219);
   text-transform: capitalize;
   height: 100vh;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  /* font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; */
 }
 
 .bg {
-  background-color: rgb(88, 76, 76);
+  background-color: #6a003e;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,9 +21,6 @@ code {
   font-size: 25px;
   padding: 10px;
 }
-
-
-
 
 .main {
   display: flex;

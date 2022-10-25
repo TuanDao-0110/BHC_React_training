@@ -9,7 +9,7 @@
 // }
 import style from "./Header.module.css";
 const Header = () => {
-  return <div className={`${style["header"]} bg`}>header</div>;
+  return <div className={`${style["header"]} bg`}>counting application</div>;
 };
 
 export default Header;

@@ -44,6 +44,10 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  width: 85px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .card:hover {
