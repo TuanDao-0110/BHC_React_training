@@ -22,17 +22,8 @@ code {
   padding: 10px;
 }
 
-.header {
-  position: fixed;
-  top: 0px;
-  width: 100%;
-}
 
-.footer {
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-}
+
 
 .main {
   display: flex;
