@@ -1,72 +1,54 @@
-import logo from './logo.svg';
 import './App.css';
-import Card from './card/Card'
-const persons = [
-  {
-    name: 'Margit',
-    title: 'CEO',
-    age: 29,
-    languages: [
-      {
-        name: 'english', id: 1
-      },
-      {
-        name: 'finnish', id: 2
-      },
-      {
-        name: 'russian', id: 3
-      },
-    ],
-  },
-  {
-    name: 'Kati',
-    title: 'Developer',
-    age: 25,
-    languages: [
-      {
-        name: 'english', id: 1
-      },
-      {
-        name: 'finnish', id: 2
-      },
-      {
-        name: 'russian', id: 3
-      },
-      {
-        name: 'spanish', id: 4
-      },
-    ],
-  },
-  {
-    name: 'Karin',
-    title: 'Designer',
-    age: 45,
-    languages: [
-      {
-        name: 'english', id: 1
-      },
-      {
-        name: 'russian', id: 2
-      },
-    ],
-  },
-];
+import Header from './counter/header/Header';
+import Footer from './counter/footer/Footer'
+import Count from './counter/count_button/Count';
+import { useState } from 'react';
+// 1.create box function
+// const createBoxs = () => {
+//   return persons.map((item, index) => {
+//     return <Card key={index} person={item}></Card>
+//   })
+// }
 
-const createBoxs = () => {
-  return persons.map((item, index) => {
-    return <Card key={index} person={item}></Card>
-  })
+// 2. create arr for button 
+const arrBtn = [{ name: 'add five', fn: 'add', value: 5 }, { name: 'add one', fn: 'add', value: 1 }, { name: 'reset', fn: 'reset', value: 0 }, { name: 'remove five', fn: 'remove', value: 5 }, { name: 'remove one', fn: 'remove', value: 1 }]
+// 3. render button 
+// const renderBtn = () => {
+//   return arrBtn.map((item, index) => {
+//     return <Count key={index} value={item} />
+//   })
+// }
+//4. add fn : 
+const add = (number) => {
 }
+
 function App() {
+  const [state, setState] = useState(0)
   return (
-    <>
-      <header className='header'>
+    <div className='main'>
+      {/* <header className='header'>
         this is my header
       </header>
       <div className='main' >
         {createBoxs()}
+      </div> */}
+      <Header />
+      <div className='card_display'>
+        <div className='result'>
+          <div className='number bg'>
+            {state}
+          </div>
+        </div>
+        <div className='buttons_display'>
+          {arrBtn.map((item, index) => {
+            return <Count key={index} setState={setState} state={state} value={item} />
+          })}
+
+         
+        </div>
       </div>
-    </>
+      <Footer />
+    </div>
   );
 }
 

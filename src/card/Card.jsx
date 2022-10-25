@@ -9,7 +9,12 @@ export default function card(props) {
       <p>age : {age}</p>
       {languages.map((item, index) => {
         const { name, id } = item;
-        return <span key={index}>name: {name}</span>;
+        return (
+          <span key={index}>
+            {" "}
+            {!index? "" : "--"}name: {name}
+          </span>
+        );
       })}
     </div>
   );

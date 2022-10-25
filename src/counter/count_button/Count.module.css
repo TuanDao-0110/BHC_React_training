@@ -1,0 +1,14 @@
+.card {
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(88, 76, 76);
+  color: aliceblue;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.card:hover {
+  background-color: aqua;
+  color: rgb(88, 76, 76);
+}
