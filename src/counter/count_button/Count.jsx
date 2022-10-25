@@ -10,20 +10,13 @@
 // }
 import style from "./Count.module.css";
 const Count = (props) => {
-  let { name, fn, value } = props.value;
-  let { state, setState } = props;
+  let { name, value } = props.value;
+  let { setState } = props;
   return (
     <div
       className={style["card"]}
       onClick={() => {
-        switch (fn) {
-          case "add":
-            return setState(state + value);
-          case "remove":
-            return setState(state - value);
-          default:
-            setState(0);
-        }
+        setState(value);
       }}
     >
       {name}

@@ -2,7 +2,7 @@ import './App.css';
 import Header from './counter/header/Header';
 import Footer from './counter/footer/Footer'
 import Count from './counter/count_button/Count';
-import { useState } from 'react';
+import { Component, useState } from 'react';
 // 1.create box function
 // const createBoxs = () => {
 //   return persons.map((item, index) => {
@@ -19,37 +19,56 @@ const arrBtn = [{ name: 'add five', fn: 'add', value: 5 }, { name: 'add one', fn
 //   })
 // }
 //4. add fn : 
-const add = (number) => {
-}
+class App extends Component {
 
-function App() {
-  const [state, setState] = useState(0)
-  return (
-    <div className='main'>
-      {/* <header className='header'>
+  state = ({ value: 0 })
+  // const [state, setState] = useState(0)
+  add = (number) => {
+    this.setState({ value: this.state.value + number })
+  }
+
+  remove = (number) => {
+    this.setState({ value: this.state.value - number })
+  }
+  reset = (number) => {
+    this.setState({ value: 0 })
+  }
+  render() {
+
+    return (
+      <div className='main'>
+        {/* <header className='header'>
         this is my header
       </header>
       <div className='main' >
         {createBoxs()}
       </div> */}
-      <Header />
-      <div className='card_display'>
-        <div className='result'>
-          <div className='number bg'>
-            {state}
+        <Header />
+        <div className='card_display'>
+          <div className='result'>
+            <div className='number bg'>
+              {this.state.value}
+            </div>
           </div>
-        </div>
-        <div className='buttons_display'>
-          {arrBtn.map((item, index) => {
-            return <Count key={index} setState={setState} state={state} value={item} />
-          })}
-
+          <div className='buttons_display'>
+            {arrBtn.map((item, index) => {
+              switch (item.fn) {
+                case "add":
+                  return <Count key={index} setState={this.add} value={item} />
+                case "remove":
+                  return <Count key={index} setState={this.remove} value={item} />
+                default:
+                  return <Count key={index} setState={this.reset} value={item} />
+              }
+            })}
          
+          </div>
+
         </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
