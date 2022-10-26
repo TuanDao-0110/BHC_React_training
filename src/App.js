@@ -13,11 +13,7 @@ import { Component, useState } from 'react';
 // 2. create arr for button 
 const arrBtn = [{ name: 'add five', fn: 'add', value: 5 }, { name: 'add one', fn: 'add', value: 1 }, { name: 'reset', fn: 'reset', value: 0 }, { name: 'remove five', fn: 'remove', value: 5 }, { name: 'remove one', fn: 'remove', value: 1 }]
 // 3. render button 
-// const renderBtn = () => {
-//   return arrBtn.map((item, index) => {
-//     return <Count key={index} value={item} />
-//   })
-// }
+
 //4. add fn : 
 class App extends Component {
 
@@ -54,14 +50,14 @@ class App extends Component {
             {arrBtn.map((item, index) => {
               switch (item.fn) {
                 case "add":
-                  return <Count key={index} setState={this.add} value={item} />
+                  return <Count key={index} action={this.add} value={item} />
                 case "remove":
-                  return <Count key={index} setState={this.remove} value={item} />
+                  return <Count key={index} action={this.remove} value={item} />
                 default:
-                  return <Count key={index} setState={this.reset} value={item} />
+                  return <Count key={index} action={this.reset} value={item} />
               }
             })}
-         
+
           </div>
 
         </div>

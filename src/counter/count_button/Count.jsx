@@ -11,12 +11,12 @@
 import style from "./Count.module.css";
 const Count = (props) => {
   let { name, value } = props.value;
-  let { setState } = props;
+  let { action } = props;
   return (
     <div
       className={style["card"]}
       onClick={() => {
-        setState(value);
+        action(value);
       }}
     >
       {name}
