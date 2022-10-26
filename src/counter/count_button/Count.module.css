@@ -56,5 +56,5 @@
 }
 
 .card:focus {
-  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
+  box-shadow: rgba(113, 13, 13, 0.9) 2px 8px 4px 50px;
 }

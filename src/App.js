@@ -36,11 +36,12 @@ class App extends Component {
   reset = (number) => {
     this.setState({ value: 0 })
   }
+  // create render function buttons
   renderCountBtn = () => {
     return arrBtn.map((item, index) => {
       switch (item.fn) {
         case "add":
-          return <Count key={index} setState={this.add} value={item} />
+          return <Count key={index} setState={this.add} value={item}  />
         case "remove":
           return <Count key={index} setState={this.remove} value={item} />
         default:
@@ -52,12 +53,6 @@ class App extends Component {
 
     return (
       <div className='main'>
-        {/* <header className='header'>
-        this is my header
-      </header>
-      <div className='main' >
-        {createBoxs()}
-      </div> */}
         <Header />
         <div className='card_display'>
           <div className='result'>
@@ -69,9 +64,8 @@ class App extends Component {
             {
               this.renderCountBtn()
             }
-
           </div>
-          <div className='text-9xl'>test taiwinds ccss</div>
+        
         </div>
         <Footer />
       </div>
