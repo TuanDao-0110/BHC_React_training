@@ -71,7 +71,7 @@ class App extends Component {
             }
 
           </div>
-
+          <div className='text-9xl'>test taiwinds ccss</div>
         </div>
         <Footer />
       </div>

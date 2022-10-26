@@ -7,7 +7,7 @@ export default class Footer extends Component {
       <div className={`${style.footer} bg`}>
         {" "}
         desgin by tuan BCH-----
-        <img src={require("./footer_icon.png")} alt="" srcset="" width={"150px"} height={"100px"} />
+        <img src={require("./footer_icon.png")} alt="" srcset="" width={"150px"} height={"100px"}  />
       </div>
     );
   }
