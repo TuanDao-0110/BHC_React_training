@@ -20,7 +20,7 @@ const arrBtn = [{ name: 'add five', fn: 'add', value: 5 }, { name: 'add one', fn
 // }
 //4. add fn : 
 class App extends Component {
-
+  // set state: 
   state = ({ value: 0 })
   // const [state, setState] = useState(0)
   add = (number) => {
@@ -28,10 +28,25 @@ class App extends Component {
   }
 
   remove = (number) => {
-    this.setState({ value: this.state.value - number })
+    if (this.state.value > 0 && this.state.value >= number) {
+      return this.setState({ value: this.state.value - number })
+    }
+    alert('you can not remove the number ')
   }
   reset = (number) => {
     this.setState({ value: 0 })
+  }
+  renderCountBtn = () => {
+    return arrBtn.map((item, index) => {
+      switch (item.fn) {
+        case "add":
+          return <Count key={index} setState={this.add} value={item} />
+        case "remove":
+          return <Count key={index} setState={this.remove} value={item} />
+        default:
+          return <Count key={index} setState={this.reset} value={item} />
+      }
+    })
   }
   render() {
 
@@ -51,17 +66,10 @@ class App extends Component {
             </div>
           </div>
           <div className='buttons_display'>
-            {arrBtn.map((item, index) => {
-              switch (item.fn) {
-                case "add":
-                  return <Count key={index} setState={this.add} value={item} />
-                case "remove":
-                  return <Count key={index} setState={this.remove} value={item} />
-                default:
-                  return <Count key={index} setState={this.reset} value={item} />
-              }
-            })}
-         
+            {
+              this.renderCountBtn()
+            }
+
           </div>
 
         </div>

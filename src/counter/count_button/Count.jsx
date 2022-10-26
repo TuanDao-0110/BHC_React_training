@@ -11,7 +11,7 @@
 import style from "./Count.module.css";
 const Count = (props) => {
   let { name, value } = props.value;
-  let { setState } = props;
+  let { setState,  } = props;
   return (
     <div
       className={style["card"]}
