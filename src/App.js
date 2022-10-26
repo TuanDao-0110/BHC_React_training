@@ -61,7 +61,7 @@ class App extends Component {
         <Header />
         <div className='card_display'>
           <div className='result'>
-            <div className='number bg'>
+            <div className={`number bg ${(this.state.value) % 2 === 0 ? '' : 'odd'}`}>
               {this.state.value}
             </div>
           </div>

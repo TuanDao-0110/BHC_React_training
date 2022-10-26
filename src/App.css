@@ -62,3 +62,8 @@ code {
   gap: 1rem;
   justify-content: space-between;
 }
+
+.odd { 
+  background-color: aqua;
+
+}
